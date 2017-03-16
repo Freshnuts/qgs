@@ -26,8 +26,7 @@ if len(sys.argv) == 1:
     sys.exit()
 
 search = sys.argv[2:]
-search = str(search).replace('[','').replace(']','').replace(',','')\
-					.replace('\'','')
+search = str(search).replace('[','').replace(']','').replace(',','').replace('\'','')
 for o, a in opts:
     if o == "-h":
         print "Usage: qgs.py [(--search, -s) key term] [-h help menu]"
@@ -41,3 +40,5 @@ for o, a in opts:
         print "Opening browser & searching, %s" % search
         webbrowser.open(full_url)
         sys.exit()
+    else:
+        print "Error. WTF did you you?!"
